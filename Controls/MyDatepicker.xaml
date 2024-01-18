@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomDatepicker.Controls.MyDatepicker"
+             xmlns:me="clr-namespace:CustomDatepicker.Controls"
+             x:DataType="me:MyDatepicker"
+             BindingContext="{Binding Source={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="borderDatePickerCustom"
+                Padding="4,0,4,0"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Stroke="Violet"
+                StrokeThickness="1">
+            <Grid>
+
+                <DatePicker Margin="0,0,0,0"
+                            Opacity="0"
+                            IsVisible="true"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            DateSelected="OnDateSelected" />
+                <Image  
+                       ZIndex="-1"
+                       HeightRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Margin="4"
+                       Source="calendar.png"
+                       IsVisible="true" />
+                <Label x:Name="lblPh"
+                       ZIndex="-1"
+                       IsVisible="true"
+                      
+                       FontSize="15"
+                       InputTransparent="true"
+                       Margin="30,0,10,2"
+                       Text="{Binding Text}"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       TextColor="Black"
+                       BackgroundColor="white"
+                       IsEnabled="true">
+                </Label>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>
